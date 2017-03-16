@@ -126,7 +126,7 @@ def GradleBuild() {
 
 def AntBuild() {
     try {
-        sh "'${anthome}/bin/ant' main"
+        sh "'${anthome}/bin/ant' run"
     } catch (Exception e) {
         sh "echo Ant Build Failed"
     }
