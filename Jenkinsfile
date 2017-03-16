@@ -5,9 +5,7 @@ node {
     def mvnHome
     mvnHome = tool 'M2'
     def anthome
-    anthome = tool 'ANT'
     def gradlehome
-    gradlehome = tool 'G3'
     checkout scm
     if (fileExists("${WORKSPACE}/gradlew")) {
         sh "echo ### GRADLE BUILD ###"
@@ -118,6 +116,7 @@ def Checkout() {
 def GradleBuild() {
     
     try {
+        gradlehome = tool 'G3'
         sh "./gradlew chromeTest"
     } catch (Exception e) {
         sh "echo Build Failed at chromeTest"
@@ -126,6 +125,7 @@ def GradleBuild() {
 
 def AntBuild() {
     try {
+        anthome = tool 'ANT'
         sh "'${anthome}/bin/ant' run"
     } catch (Exception e) {
         sh "echo Ant Build Failed"
