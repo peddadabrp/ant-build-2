@@ -83,7 +83,7 @@ def PreparationANTEnv() {
 
         deleteDir()
     
-    URL_SOURCE = 'https://github.com/Silverpop/sample-helloworld-ant.git'
+    URL_SOURCE = 'https://github.com/peddadabrp/ant-build-2.git'
 
     SCM_BRANCH = '*/master'
 
