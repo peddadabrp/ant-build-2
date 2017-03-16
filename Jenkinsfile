@@ -127,7 +127,7 @@ def AntBuild() {
     try {
         anthome = tool 'ANT'
         sh "'${anthome}/bin/ant' run"
-        sh "ls -lart build/"
+        sh "find ./ -name *.jar"
     } catch (Exception e) {
         sh "echo Ant Build Failed"
     }
